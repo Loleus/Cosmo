@@ -1,108 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Spacer</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spacer</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-    <div class="wrapper">
-        <section>
-            <nav>
-                <ul>
-                    <li>
-                        <h1>
-                            . info .
-                        </h1>
-                    </li>
-                    <li>
-                        <h1>
-                            . dev .
-                        </h1>
-                    </li>
-                    <li>
-                        <h1>
-                            . pic .
-                        </h1>
-                    </li>
-                    <li>
-                        <h1>
-                            . snd .
-                        </h1>
-                    </li>
-                </ul>
-
-            </nav>
-        </section>
-        <article class="modals disabled">
-            <div id="info" class="modal hidden">
-                <h1>. info .</h1>
-                <div class="left hidden">
-                    <h1>. left .</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas accusantium, qui consectetur
-                        facilis soluta necessitatibus commodi ratione aperiam sunt illum reiciendis voluptate quos
-                        officiis. Aspernatur pariatur architecto ratione maxime qui?</p>
-                </div>
-                <div class="right hidden">
-                    <h1>. right .</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas accusantium, qui consectetur
-                        facilis soluta necessitatibus commodi ratione aperiam sunt illum reiciendis voluptate quos
-                        officiis. Aspernatur pariatur architecto ratione maxime qui?</p>
-                </div>
-            </div>
-            <div id="dev" class="modal hidden">
-                <h1>. dev .</h1>
-                <div class="left hidden">
-                    <h1>. left .</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas accusantium, qui consectetur
-                        facilis soluta necessitatibus commodi ratione aperiam sunt illum reiciendis voluptate quos
-                        officiis. Aspernatur pariatur architecto ratione maxime qui?</p>
-                </div>
-                <div class="right hidden">
-                    <h1>. right .</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas accusantium, qui consectetur
-                        facilis soluta necessitatibus commodi ratione aperiam sunt illum reiciendis voluptate quos
-                        officiis. Aspernatur pariatur architecto ratione maxime qui?</p>
-                </div>
-            </div>
-            <div id="pic" class="modal hidden">
-                <h1>. pic .</h1>
-                <div class="left hidden">
-                    <h1>. left .</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas accusantium, qui consectetur
-                        facilis soluta necessitatibus commodi ratione aperiam sunt illum reiciendis voluptate quos
-                        officiis. Aspernatur pariatur architecto ratione maxime qui?</p>
-                </div>
-                <div class="right hidden">
-                    <h1>. right .</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas accusantium, qui consectetur
-                        facilis soluta necessitatibus commodi ratione aperiam sunt illum reiciendis voluptate quos
-                        officiis. Aspernatur pariatur architecto ratione maxime qui?</p>
-                </div>
-            </div>
-            <div id="snd" class="modal hidden">
-                <h1>. snd .</h1>
-                <div class="left hidden">
-                    <h1>. left .</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas accusantium, qui consectetur
-                        facilis soluta necessitatibus commodi ratione aperiam sunt illum reiciendis voluptate quos
-                        officiis. Aspernatur pariatur architecto ratione maxime qui?</p>
-                </div>
-                <div class="right hidden">
-                    <h1>. right .</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas accusantium, qui consectetur
-                        facilis soluta necessitatibus commodi ratione aperiam sunt illum reiciendis voluptate quos
-                        officiis. Aspernatur pariatur architecto ratione maxime qui?</p>
-                </div>
-            </div>
-            <span id="close" class="close">X</span>
-        </article>
-    </div>
-    <script src="./js/index.js"></script>
+  <div id="roots" class="wrapper">
+    <nav>
+      <ul>
+        <li>
+          <h1>. info .</h1>
+        </li>
+        <li>
+          <h1>. dev .</h1>
+        </li>
+        <li>
+          <h1>. pic .</h1>
+        </li>
+        <li>
+          <h1>. snd .</h1>
+        </li>
+      </ul>
+    </nav>
+    <main class="modals disabled">
+      <div class="modal hidden">
+        <h1 id="title">. info .</h1>
+        <div id="left" class="left hidden"></div>
+        <div id="right" class="right hidden"></div>
+      </div>
+      <span id="close" class="close">X</span>
+    </main>
+  </div>
+  <script type="module" src="./js/index.js"></script>
 </body>
-
 </html>

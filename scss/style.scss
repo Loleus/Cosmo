@@ -1,0 +1,51 @@
+@import "nav";
+@import "main";
+@import "animation";
+
+@mixin gradient_flash {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #a3a8df;
+  content: "";
+  top: 0;
+  left: 0;
+  transform: skewY(-23deg) translate(0, -200%);
+  animation: flash 8s linear 1s infinite;
+  transition: opacity 0s;
+  background: linear-gradient(0deg,#a3a8df 0%,#a3a8df 3%,#a3a8df32 5%,rgba(0, 0, 0, 0) 100%);
+}
+
+* {
+  font-family: helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  user-select: none;
+  text-align: center;
+  transition: all 0.3s linear;
+}
+
+html,
+body {
+  height: 100%;
+  color: beige;
+  background: #322c78;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-image: url(../assets/bcg.jpg);
+  background-position: bottom;
+  background-size: cover;
+  &::before {
+    @include gradient_flash();
+  }
+}

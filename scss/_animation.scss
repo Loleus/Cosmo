@@ -1,0 +1,38 @@
+
+@keyframes flash {
+  0% {
+    display: block;
+    transform: skewY(-23deg) translate(0, -180%);
+    border-bottom: 1px solid #a3a8df;
+    opacity: 0;
+  }
+
+  1% {
+    transform: skewY(-23deg) translate(0, -180%);
+    opacity: 0;
+  }
+
+  12.5% {
+    transform: skewY(-23deg) translate(0, 0%);
+    opacity: 1;
+    border-bottom: 1px solid #a3a8df;
+  }
+
+  25% {
+    transform: skewY(-23deg) translate(0, 150%);
+    opacity: 1;
+    border-bottom: 1px solid #a3a8df;
+  }
+
+  37% {
+    transform: skewY(-23deg) translate(0, 200%);
+    opacity: 0;
+    border-bottom: 1px solid #a3a8df;
+  }
+
+  100% {
+    transform: skewY(-23deg) translate(0, 240%);
+    opacity: 0;
+    display: none;
+  }
+}

@@ -1,0 +1,88 @@
+@mixin shadows($color) {
+  border: 2px solid var(&color);
+  box-shadow: 0 0 15px -1px var(&color);
+  text-shadow: 0px 0px 19px var(&color);
+  color: var(&color);
+}
+
+@mixin mainRules {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  width: 200px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+@mixin menu {
+  @include mainRules;
+  text-shadow: 0px 0px 6px black;
+  margin: 25px 0 25px;
+  color: transparent;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+nav {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+
+  ul {
+    flex-direction: column;
+    text-decoration: none;
+    list-style: none;
+
+    h1 {
+      @include menu;
+      position: relative;
+      font-size: 2em;
+      box-shadow: 0 0 30px 0px black;
+
+      &::before {
+        @include gradient_flash();
+      }
+    }
+
+    li {
+
+      &:hover {
+        --color: rgb(86, 240, 196);
+        h1 {
+          margin: 50px 0 50px;
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      &:active {
+        --color: rgb(240, 222, 86);
+        h1 {
+          background: rgba(240, 222, 86, 0.5);
+        }
+      }
+
+      &:active,
+      &:hover {
+        h1 {
+          @include color(var(--color))
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  nav ul h1 {
+    @include color(rgb(86, 240, 196));
+    @include mainRules;
+    margin: 50px 0 50px;
+
+    &.disabled {
+      @include menu;
+      box-shadow: none;
+    }
+
+  }
+}
