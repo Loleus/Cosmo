@@ -11,10 +11,10 @@ nav ul {
   list-style: none;
 }
 nav ul h1 {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   padding: 10px 0;
   width: 200px;
-  border-radius: 20px;
+  border-radius: 7px;
   cursor: pointer;
   text-shadow: 0px 0px 6px black;
   margin: 25px 0 25px;
@@ -62,18 +62,18 @@ nav ul li:active h1 {
     box-shadow: 0 0 15px -1px rgb(86, 240, 196);
     text-shadow: 0px 0px 19px rgb(86, 240, 196);
     color: rgb(86, 240, 196);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     padding: 10px 0;
     width: 200px;
-    border-radius: 20px;
+    border-radius: 7px;
     cursor: pointer;
     margin: 50px 0 50px;
   }
   nav ul h1.disabled {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     padding: 10px 0;
     width: 200px;
-    border-radius: 20px;
+    border-radius: 7px;
     cursor: pointer;
     text-shadow: 0px 0px 6px black;
     margin: 25px 0 25px;
@@ -89,9 +89,9 @@ nav ul li:active h1 {
   left: 2%;
   width: 96%;
   height: 96%;
-  border-radius: 25px;
+  border-radius: 7px 25px 7px 7px;
   border: 2px solid rgb(86, 240, 196);
-  box-shadow: 0 0 15px -5px rgb(86, 240, 196);
+  box-shadow: 0 0 15px 0px rgb(86, 240, 196);
   text-shadow: 0px 0px 19px rgb(74, 202, 0);
   background: rgba(0, 0, 0, 0.5);
   transition: transform 0.33s ease-in-out 0.48s;
@@ -134,9 +134,9 @@ nav ul li:active h1 {
   justify-content: center;
   flex-direction: column;
   width: 42%;
-  height: 92%;
+  height: 98%;
   position: absolute;
-  top: 4%;
+  top: 1%;
   transition: transform 0.67s ease-in-out, background 0.3s linear;
 }
 .modals .modal .left {
@@ -168,6 +168,13 @@ nav ul li:active h1 {
     background: rgba(240, 222, 86, 0.5);
     color: rgb(240, 222, 86);
   }
+  .modals {
+    position: absolute;
+    top: 1vh;
+    left: 2%;
+    width: 96%;
+    height: 98vh;
+  }
   .modals .modal {
     display: block;
     font-size: 1em;
@@ -178,7 +185,7 @@ nav ul li:active h1 {
 .modals .modal .right {
     box-sizing: border-box;
     width: 96%;
-    height: 46%;
+    height: 49%;
     position: absolute;
     left: 2%;
     transition: transform 0.67s ease-in-out, background 0.3s linear;
@@ -309,27 +316,30 @@ nav ul li:active h1 {
           user-select: none;
   text-align: center;
   transition: all 0.3s linear;
+  color: beige;
 }
 
 html,
 body {
   height: 100%;
-  color: beige;
-  background: #322c78;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+section {
   position: relative;
   width: 100%;
   min-height: 100%;
   background-image: url(../assets/bcg.jpg);
   background-position: bottom;
   background-size: cover;
+  transition: all 0.3s linear;
+  overflow: hidden;
 }
-.wrapper::before {
+section::before {
   position: absolute;
   display: block;
   width: 100%;

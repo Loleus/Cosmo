@@ -4,9 +4,9 @@
   left: 2%;
   width: 96%;
   height: 96%;
-  border-radius: 25px;
+  border-radius: 7px 25px 7px 7px;
   border: 2px solid rgb(86, 240, 196);
-  box-shadow: 0 0 15px -5px rgb(86, 240, 196);
+  box-shadow: 0 0 15px 0px rgb(86, 240, 196);
   text-shadow: 0px 0px 19px rgb(74, 202, 0);
   background: rgba(0, 0, 0, 0.5);
   transition: transform 0.33s ease-in-out 0.48s;
@@ -57,9 +57,9 @@
       justify-content: center;
       flex-direction: column;
       width: 42%;
-      height: 92%;
+      height: 98%;
       position: absolute;
-      top: 4%;
+      top: 1%;
       transition: transform 0.67s ease-in-out, background 0.3s linear;
 
     }
@@ -100,7 +100,13 @@
     background: rgba(240, 222, 86, 0.5);
     color: rgb(240, 222, 86);
   }
-
+  .modals {
+    position: absolute;
+    top: 1vh;
+    left: 2%;
+    width: 96%;
+    height: 98vh;
+  }
   .modals .modal {
     display: block;
     font-size: 1em;
@@ -112,7 +118,7 @@
   .modals .modal .right {
     box-sizing: border-box;
     width: 96%;
-    height: 46%;
+    height: 49%;
     position: absolute;
     left: 2%;
     transition: transform 0.67s ease-in-out, background 0.3s linear;

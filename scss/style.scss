@@ -3,7 +3,6 @@
 @import "animation";
 @import "mixins";
 
-
 * {
   font-family: helvetica, sans-serif;
   margin: 0;
@@ -13,26 +12,29 @@
   user-select: none;
   text-align: center;
   transition: all 0.3s linear;
+  color: beige;
 }
 
 html,
 body {
   height: 100%;
-  color: beige;
-  background: #322c78;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+section {
   position: relative;
   width: 100%;
   min-height: 100%;
   background-image: url(../assets/bcg.jpg);
   background-position: bottom;
   background-size: cover;
+  transition: all .3s linear;
+  overflow: hidden;
   &::before {
     @include gradient_flash();
   }
 }
+
