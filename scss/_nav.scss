@@ -1,8 +1,10 @@
+@import "mixins";
+
 @mixin shadows($color) {
-  border: 2px solid var(&color);
-  box-shadow: 0 0 15px -1px var(&color);
-  text-shadow: 0px 0px 19px var(&color);
-  color: var(&color);
+  border: 2px solid $color;
+  box-shadow: 0 0 15px -1px $color;
+  text-shadow: 0px 0px 19px $color;
+  color: $color;
 }
 
 @mixin mainRules {
@@ -41,31 +43,24 @@ nav {
       box-shadow: 0 0 30px 0px black;
 
       &::before {
-        @include gradient_flash();
+        @include gradient_flash;
       }
     }
 
     li {
 
       &:hover {
-        --color: rgb(86, 240, 196);
         h1 {
           margin: 50px 0 50px;
           background: rgba(0, 0, 0, 0.5);
+          @include shadows(rgb(86, 240, 196))
         }
       }
 
       &:active {
-        --color: rgb(240, 222, 86);
         h1 {
           background: rgba(240, 222, 86, 0.5);
-        }
-      }
-
-      &:active,
-      &:hover {
-        h1 {
-          @include color(var(--color))
+          @include shadows(rgb(240, 222, 86))
         }
       }
     }
@@ -75,7 +70,7 @@ nav {
 @media screen and (max-width: 480px) {
 
   nav ul h1 {
-    @include color(rgb(86, 240, 196));
+    @include shadows(rgb(86, 240, 196));
     @include mainRules;
     margin: 50px 0 50px;
 

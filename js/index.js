@@ -2,68 +2,68 @@ const templateParagraph = "Lorem ipsum dolor sit amet, consectetur adipisicing e
 
 'use strict'
 const init = () => {
-  let leftText = `left ${templateParagraph}`;
-  let rightText = `right ${templateParagraph}`;  
-  const modals = document.querySelector(".modals")
-  const modal = document.querySelector(".modal")
-  const nav = document.querySelectorAll("nav h1")
-  const close = document.getElementById("close");
-  const content = document.querySelectorAll('.modal div')
 
-  const changeModal = function (textContent) {
-    let title = document.getElementById("title")
-    modals.classList.remove("disabled");
-    modal.classList.remove("hidden");
-    title.textContent = textContent;
-    setTimeout(() => {
+    const modals = document.querySelector(".modals")
+    const modal = document.querySelector("div .modal")
+    const nav = document.querySelectorAll("nav h1")
+    const close = document.getElementById("close");
+    const content = document.querySelectorAll('.modals .modal div')
+    let title = document.getElementById("title");
+    let left = document.getElementById("left")
+    let right = document.getElementById("right")
+    const changeModal = function (text) {
+        modals.classList.remove("disabled");
+        modal.classList.remove("hidden");
+        setTimeout(() => {
 
-      for (let i = 0; i < content.length; i++) {
-        content[i].classList.remove('hidden');
-      }
+            for (let i = 0; i < content.length; i++) {
+                content[i].classList.remove('hidden');
+            }
 
-    }, 670)
-  }
+        }, 670)
+    }
 
-  const disableMobileMenu = function () {
+    const disableMobileMenu = function () {
+        for (let i = 0; i < nav.length; i++) {
+            nav[i].classList.add("disabled")
+        }
+    }
+
+    const closeBtnHandler = function (i) {
+        close.onmouseenter = () => {
+            modals.classList.add("active");
+        }
+        close.onmouseleave = () => {
+            modals.classList.remove("active");
+        }
+        close.onclick = () => {
+            modals.classList.remove("active");
+            for (let i = 0; i < nav.length; i++) {
+                nav[i].classList.remove("disabled")
+            }
+
+            modals.classList.add("disabled");
+
+            for (let i = 0; i < content.length; i++) {
+                content[i].classList.add('hidden');
+            }
+
+            setTimeout(() => {
+                modal.classList.add("hidden")
+            }, 670)
+        }
+    }
+
     for (let i = 0; i < nav.length; i++) {
-      nav[i].classList.add("disabled")
+        nav[i].onclick = () => {
+            changeModal();
+            disableMobileMenu();
+            closeBtnHandler(i);
+            title.textContent = nav[i].textContent
+            left.textContent = nav[i].textContent + " " + templateParagraph
+            right.textContent = nav[i].textContent + " " + templateParagraph
+        }
     }
-  }
-
-  const closeBtnHandler = function () {
-    close.onmouseenter = () => {
-      modals.classList.add("active");
-    }
-    close.onmouseleave = () => {
-      modals.classList.remove("active");
-    }
-    close.onclick = () => {
-      modals.classList.remove("active");
-      for (let i = 0; i < nav.length; i++) {
-        nav[i].classList.remove("disabled")
-      }
-
-      modals.classList.add("disabled");
-
-      for (let i = 0; i < content.length; i++) {
-        content[i].classList.add('hidden');
-      }
-
-      setTimeout(() => {
-        modal.classList.add("hidden")
-      }, 670)
-    }
-  }
-
-  for (let i = 0; i < nav.length; i++) {
-    nav[i].onclick = () => {
-      changeModal(nav[i].textContent);
-      disableMobileMenu();
-      closeBtnHandler();
-      document.getElementById("left").innerHTML = nav[i].textContent + leftText;
-      document.getElementById("right").innerHTML = nav[i].textContent + rightText;
-    }
-  }
 
 }
 init();
