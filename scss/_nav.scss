@@ -17,7 +17,7 @@
 
 @mixin menu {
   @include mainRules;
-  text-shadow: 0px 0px 6px black;
+  text-shadow: 0px 0px 3px black;
   margin: 25px 0 25px;
   color: transparent;
   border: 2px solid transparent;
@@ -53,7 +53,8 @@ nav {
         h1 {
           margin: 50px 0 50px;
           background: rgba(0, 0, 0, 0.5);
-          @include shadows(rgb(86, 240, 196))
+          @include shadows(rgb(86, 240, 196));
+          backdrop-filter: blur(1px);
         }
       }
 

@@ -16,7 +16,7 @@ nav ul h1 {
   width: 200px;
   border-radius: 7px;
   cursor: pointer;
-  text-shadow: 0px 0px 6px black;
+  text-shadow: 0px 0px 3px black;
   margin: 25px 0 25px;
   color: transparent;
   border: 2px solid transparent;
@@ -35,8 +35,7 @@ nav ul h1::before {
   top: 0;
   left: 0;
   transform: skewY(-23deg) translate(0, -200%);
-  -webkit-animation: flash 8s linear 1s infinite;
-          animation: flash 8s linear 1s infinite;
+  animation: flash 8s linear 1s infinite;
   transition: opacity 0s;
   background: linear-gradient(0deg, #a3a8df 0%, #a3a8df 3%, rgba(163, 168, 223, 0.1960784314) 5%, rgba(0, 0, 0, 0) 100%);
 }
@@ -47,6 +46,8 @@ nav ul li:hover h1 {
   box-shadow: 0 0 15px -1px rgb(86, 240, 196);
   text-shadow: 0px 0px 19px rgb(86, 240, 196);
   color: rgb(86, 240, 196);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
 }
 nav ul li:active h1 {
   background: rgba(240, 222, 86, 0.5);
@@ -75,7 +76,7 @@ nav ul li:active h1 {
     width: 200px;
     border-radius: 7px;
     cursor: pointer;
-    text-shadow: 0px 0px 6px black;
+    text-shadow: 0px 0px 3px black;
     margin: 25px 0 25px;
     color: transparent;
     border: 2px solid transparent;
@@ -93,7 +94,8 @@ nav ul li:active h1 {
   border: 2px solid rgb(86, 240, 196);
   box-shadow: 0 0 15px 0px rgb(86, 240, 196);
   text-shadow: 0px 0px 19px rgb(74, 202, 0);
-  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   transition: transform 0.33s ease-in-out 0.48s;
   transform: translate(0, 0);
   overflow: hidden;
@@ -161,7 +163,7 @@ nav ul li:active h1 {
     color: rgb(86, 240, 196);
   }
   .modals .close:hover,
-.modals .close:active {
+  .modals .close:active {
     border: 2px solid rgb(240, 222, 86);
     box-shadow: 0 0 15px -1px rgb(240, 222, 86);
     text-shadow: 0px 0px 19px rgb(240, 222, 86);
@@ -182,7 +184,7 @@ nav ul li:active h1 {
     height: 100%;
   }
   .modals .modal .left,
-.modals .modal .right {
+  .modals .modal .right {
     box-sizing: border-box;
     width: 96%;
     height: 49%;
@@ -239,39 +241,6 @@ nav ul li:active h1 {
   color: rgb(86, 240, 196);
 }
 
-@-webkit-keyframes flash {
-  0% {
-    display: block;
-    transform: skewY(-23deg) translate(0, -180%);
-    border-bottom: 1px solid #a3a8df;
-    opacity: 0;
-  }
-  1% {
-    transform: skewY(-23deg) translate(0, -180%);
-    opacity: 0;
-  }
-  12.5% {
-    transform: skewY(-23deg) translate(0, 0%);
-    opacity: 1;
-    border-bottom: 1px solid #a3a8df;
-  }
-  25% {
-    transform: skewY(-23deg) translate(0, 150%);
-    opacity: 1;
-    border-bottom: 1px solid #a3a8df;
-  }
-  37% {
-    transform: skewY(-23deg) translate(0, 200%);
-    opacity: 0;
-    border-bottom: 1px solid #a3a8df;
-  }
-  100% {
-    transform: skewY(-23deg) translate(0, 240%);
-    opacity: 0;
-    display: none;
-  }
-}
-
 @keyframes flash {
   0% {
     display: block;
@@ -312,7 +281,6 @@ nav ul li:active h1 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   text-align: center;
   transition: all 0.3s linear;
@@ -349,8 +317,7 @@ section::before {
   top: 0;
   left: 0;
   transform: skewY(-23deg) translate(0, -200%);
-  -webkit-animation: flash 8s linear 1s infinite;
-          animation: flash 8s linear 1s infinite;
+  animation: flash 8s linear 1s infinite;
   transition: opacity 0s;
   background: linear-gradient(0deg, #a3a8df 0%, #a3a8df 3%, rgba(163, 168, 223, 0.1960784314) 5%, rgba(0, 0, 0, 0) 100%);
 }/*# sourceMappingURL=style.css.map */
